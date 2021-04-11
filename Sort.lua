@@ -4,7 +4,7 @@ function LibTable.SortTableDesc(tbl, column)
     local sortedTable = tbl
     local firstIndex = 1
     local currIndex = firstIndex
-    local tblSize = #tbl
+    local tblSize = #sortedTable
 
     while (firstIndex < tblSize) do 
         currIndex = firstIndex
