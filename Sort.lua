@@ -1,24 +1,22 @@
-function SortTableDesc(tbl, field)
-	local sortedTable = { }
-    local tblSize = #tbl
-    local highestElement = 1
-    local insertIntoTable = table.insert
-    local i = 1
-    local j = i
+LibTable = { }
 
-    while (i <= tblSize) do
-        j = i
-        highestElement = j
-        while (j <= tblSize) do 
-            if (tbl[j][field] > tbl[highestElement][field]) then
-                highestElement = j
+function LibTable.SortTableDesc(tbl, column)
+    local sortedTable = tbl
+    local firstIndex = 1
+    local currIndex = firstIndex
+    local tblSize = #tbl
+
+    while (firstIndex < tblSize) do 
+        currIndex = firstIndex
+        highestValue = firstIndex
+        while (currIndex <= tblSize) do
+            if (tbl[currIndex][column] > tbl[highestValue][column]) then
+                highestVal = currIndex
             end
-            if (j == tblSize) then
-                insertIntoTable(sortedTable, tbl[highestElement])
-            end
-            j = j + 1
+            currIndex = currIndex + 1
         end
-        i = i + 1
+        tbl[tblSize], tbl[highestValue] = tbl[highestValue], tbl[tblSize]
+        firstIndex = firstIndex + 1
     end
 	return (sortedTable)
 end
