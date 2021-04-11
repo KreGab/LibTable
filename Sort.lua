@@ -10,12 +10,12 @@ function LibTable.SortTableDesc(tbl, column)
         currIndex = firstIndex
         highestValue = firstIndex
         while (currIndex <= tblSize) do
-            if (tbl[currIndex][column] > tbl[highestValue][column]) then
-                highestVal = currIndex
+            if (sortedTable[currIndex][column] > sortedTable[highestValue][column]) then
+                highestValue = currIndex
             end
             currIndex = currIndex + 1
         end
-        tbl[tblSize], tbl[highestValue] = tbl[highestValue], tbl[tblSize]
+        sortedTable[firstIndex], sortedTable[highestValue] = sortedTable[highestValue], sortedTable[firstIndex]
         firstIndex = firstIndex + 1
     end
 	return (sortedTable)
